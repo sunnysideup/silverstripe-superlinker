@@ -2,7 +2,7 @@
 
 namespace Fromholdio\SuperLinker\Extensions;
 
-use BurnBright\ExternalURLField\ExternalURLField;
+use Sunnysideup\ExternalURLField\ExternalURLField;
 use SilverStripe\Forms\FieldList;
 
 class ExternalLink extends SuperLinkTypeExtension
@@ -29,13 +29,17 @@ class ExternalLink extends SuperLinkTypeExtension
 
     public function updateDefaultTitle(?string &$title): void
     {
-        if (!$this->isLinkTypeMatch()) return;
+        if (!$this->isLinkTypeMatch()) {
+            return;
+        }
         $title = $this->getOwner()->getURL();
     }
 
     public function updateURL(?string &$url): void
     {
-        if (!$this->isLinkTypeMatch()) return;
+        if (!$this->isLinkTypeMatch()) {
+            return;
+        }
         /** @var ExternalURLField $urlField */
         $urlField = $this->getOwner()->dbObject('ExternalURL');
         $url = $urlField->URL();
@@ -43,7 +47,9 @@ class ExternalLink extends SuperLinkTypeExtension
 
     public function updateCMSLinkTypeFields(FieldList $fields, string $type, string $fieldPrefix): void
     {
-        if (!$this->isLinkTypeMatch($type)) return;
+        if (!$this->isLinkTypeMatch($type)) {
+            return;
+        }
         $fields->push(ExternalURLField::create(
             $fieldPrefix . 'ExternalURL',
             _t(__CLASS__ . '.ExternalURL', 'URL')
