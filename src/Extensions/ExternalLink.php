@@ -5,6 +5,12 @@ namespace Fromholdio\SuperLinker\Extensions;
 use Sunnysideup\ExternalURLField\ExternalURLField;
 use SilverStripe\Forms\FieldList;
 
+/**
+ * Class \Fromholdio\SuperLinker\Extensions\ExternalLink
+ *
+ * @property SuperLink|VersionedSuperLink|ExternalLink $owner
+ * @property string $ExternalURL
+ */
 class ExternalLink extends SuperLinkTypeExtension
 {
     private static $extension_link_type = 'external';

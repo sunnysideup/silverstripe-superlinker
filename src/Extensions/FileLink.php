@@ -9,6 +9,14 @@ use SilverStripe\Forms\DropdownField;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\TreeDropdownField;
 
+/**
+ * Class \Fromholdio\SuperLinker\Extensions\FileLink
+ *
+ * @property SuperLink|VersionedSuperLink|FileLink $owner
+ * @property bool $DoForceDownload
+ * @property int $FileID
+ * @method File File()
+ */
 class FileLink extends SuperLinkTypeExtension
 {
     private static $extension_link_type = 'file';

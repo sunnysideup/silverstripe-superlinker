@@ -6,6 +6,12 @@ use Innoweb\InternationalPhoneNumberField\Forms\InternationalPhoneNumberField;
 use Innoweb\InternationalPhoneNumberField\ORM\DBPhone;
 use SilverStripe\Forms\FieldList;
 
+/**
+ * Class \Fromholdio\SuperLinker\Extensions\PhoneLink
+ *
+ * @property SuperLink|VersionedSuperLink|PhoneLink $owner
+ * @property string $PhoneNumber
+ */
 class PhoneLink extends SuperLinkTypeExtension
 {
     private static $extension_link_type = 'phone';

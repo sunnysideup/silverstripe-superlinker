@@ -8,6 +8,12 @@ use SilverStripe\Control\Controller;
 use SilverStripe\Control\Director;
 use SilverStripe\Forms\DropdownField;
 
+/**
+ * Class \Fromholdio\SuperLinker\Extensions\GlobalAnchorLink
+ *
+ * @property SuperLink|VersionedSuperLink|GlobalAnchorLink $owner
+ * @property string $GlobalAnchorKey
+ */
 class GlobalAnchorLink extends SuperLinkTypeExtension
 {
     private static $extension_link_type = 'globalanchor';

@@ -8,6 +8,14 @@ use SilverStripe\CMS\Model\SiteTree;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\TreeDropdownField;
 
+/**
+ * Class \Fromholdio\SuperLinker\Extensions\SiteTreeLink
+ *
+ * @property SuperLink|VersionedSuperLink|SiteTreeLink $owner
+ * @property string $SiteTreeAnchor
+ * @property int $SiteTreeID
+ * @method SiteTree SiteTree()
+ */
 class SiteTreeLink extends SuperLinkTypeExtension
 {
     private static $extension_link_type = 'sitetree';

@@ -11,12 +11,17 @@ use SilverStripe\ORM\DataExtension;
 
 /**
  * Apply to your SuperLink classes to enable image upload for your link.
+ *
  * Hooks available for sourcing a default image based on link target, particularly
  * Page and Image links.
  *
  * 1. Apply this extension to your SuperLink class/subclass.
  * 2. Optionally apply SuperLinkImageFileExtension, and SuperLinkImagePageExtension
  * to the Image and Page classes respectively for quick/ootb default images.
+ *
+ * @property SuperLinkImageExtension $owner
+ * @property int $LinkImageID
+ * @method Image LinkImage()
  */
 class SuperLinkImageExtension extends DataExtension
 {

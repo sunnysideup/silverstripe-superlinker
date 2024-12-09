@@ -9,6 +9,13 @@ use SilverStripe\Assets\Image;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\ORM\DataExtension;
 
+/**
+ * Class \Fromholdio\SuperLinker\Extensions\SuperLinkIconExtension
+ *
+ * @property SuperLinkIconExtension $owner
+ * @property int $LinkIconID
+ * @method Image LinkIcon()
+ */
 class SuperLinkIconExtension extends DataExtension
 {
     private static $settings = [

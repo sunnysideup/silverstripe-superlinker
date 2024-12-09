@@ -16,6 +16,9 @@ use SilverStripe\ORM\DataExtension;
  * Page and File links.
  *
  * Just apply this extension to your SuperLink class/subclass.
+ *
+ * @property SuperLinkDescriptionExtension $owner
+ * @property string $LinkDescription
  */
 class SuperLinkDescriptionExtension extends DataExtension
 {

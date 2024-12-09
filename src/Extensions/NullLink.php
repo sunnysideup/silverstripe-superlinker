@@ -2,6 +2,11 @@
 
 namespace Fromholdio\SuperLinker\Extensions;
 
+/**
+ * Class \Fromholdio\SuperLinker\Extensions\NullLink
+ *
+ * @property SuperLink|VersionedSuperLink|NullLink $owner
+ */
 class NullLink extends SuperLinkTypeExtension
 {
     private static $extension_link_type = 'nolink';

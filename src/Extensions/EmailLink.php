@@ -8,6 +8,16 @@ use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\TextareaField;
 use SilverStripe\Forms\TextField;
 
+/**
+ * Class \Fromholdio\SuperLinker\Extensions\EmailLink
+ *
+ * @property SuperLink|VersionedSuperLink|EmailLink $owner
+ * @property string $Email
+ * @property string $EmailCC
+ * @property string $EmailBCC
+ * @property string $EmailSubject
+ * @property string $EmailBody
+ */
 class EmailLink extends SuperLinkTypeExtension
 {
     private static $extension_link_type = 'email';

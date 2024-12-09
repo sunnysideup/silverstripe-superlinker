@@ -5,6 +5,11 @@ namespace Fromholdio\SuperLinker\Extensions;
 use SilverStripe\Assets\Image;
 use SilverStripe\ORM\DataExtension;
 
+/**
+ * Class \Fromholdio\SuperLinker\Extensions\SuperLinkImageFileExtension
+ *
+ * @property SuperLinkImageFileExtension $owner
+ */
 class SuperLinkImageFileExtension extends DataExtension
 {
     public function getSuperLinkDefaultImage(): ?Image

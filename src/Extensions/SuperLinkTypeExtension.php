@@ -11,6 +11,11 @@ use SilverStripe\Forms\SingleSelectField;
 use SilverStripe\ORM\DataExtension;
 use SilverStripe\ORM\FieldType\DBHTMLText;
 
+/**
+ * Class \Fromholdio\SuperLinker\Extensions\SuperLinkTypeExtension
+ *
+ * @property SuperLinkTypeExtension $owner
+ */
 class SuperLinkTypeExtension extends DataExtension
 {
     private static $extension_link_type = '';

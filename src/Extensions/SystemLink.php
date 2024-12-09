@@ -7,6 +7,12 @@ use SilverStripe\Forms\DropdownField;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\View\ArrayData;
 
+/**
+ * Class \Fromholdio\SuperLinker\Extensions\SystemLink
+ *
+ * @property SuperLink|VersionedSuperLink|SystemLink $owner
+ * @property string $SystemLinkKey
+ */
 class SystemLink extends SuperLinkTypeExtension
 {
     private static $extension_link_type = 'system';
