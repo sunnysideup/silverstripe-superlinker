@@ -23,7 +23,7 @@
     "fromholdio/silverstripe-dependentgroupeddropdownfield": "^3.0.0",
     "sunnysideup/silverstripe-externalurlfield": "dev-master",
     "innoweb/silverstripe-international-phone-number-field": "^5.0.0",
-    "fromholdio/silverstripe-systemlinks": "^2.0.0"
+    "fromholdio/silverstripe-systemlinks": "dev-master"
   },
   "suggest": {
     "fromholdio/silverstripe-dbhtmlanchors": "",
