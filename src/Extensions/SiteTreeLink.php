@@ -62,10 +62,16 @@ class SiteTreeLink extends SuperLinkTypeExtension
         $contentAnchors = $siteTree?->getAnchorsOnPage();
         $this->getOwner()->invokeWithExtensions(
             'updateAvailableSiteTreeContentAnchors',
-            $contentAnchors, $siteTree
+            $contentAnchors,
+            $siteTree
         );
+        $newAnchors = [];
         if (!empty($contentAnchors)) {
-            $anchors['Page content'] = array_combine($contentAnchors, $contentAnchors);
+            foreach ($contentAnchors as $key => $anchors) {
+                foreach ($anchors as $value)
+                    $newAnchors[$value] = $value;
+            }
+            $anchors['Page content'] = $newAnchors;
         }
 
         $globalAnchors = GlobalAnchors::get_anchors();
@@ -75,7 +81,8 @@ class SiteTreeLink extends SuperLinkTypeExtension
 
         $this->getOwner()->invokeWithExtensions(
             'updateAvailableSiteTreeAnchors',
-            $anchors, $siteTree
+            $anchors,
+            $siteTree
         );
         return $anchors;
     }
@@ -146,7 +153,7 @@ class SiteTreeLink extends SuperLinkTypeExtension
         }
 
         $siteTreeLink = $this->getOwner();
-        $anchorSource = function(int|string|null $siteTreeID) use ($siteTreeLink) {
+        $anchorSource = function (int|string|null $siteTreeID) use ($siteTreeLink) {
             return $siteTreeLink->getAvailableSiteTreeAnchors($siteTreeID);
         };
 
