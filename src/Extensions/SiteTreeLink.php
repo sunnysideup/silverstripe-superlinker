@@ -68,8 +68,11 @@ class SiteTreeLink extends SuperLinkTypeExtension
         $newAnchors = [];
         if (!empty($contentAnchors)) {
             foreach ($contentAnchors as $key => $anchors) {
-                foreach ($anchors as $value)
-                    $newAnchors[$value] = $value;
+                if(is_array($anchors)) {
+                    foreach ($anchors as $value) {
+                        $newAnchors[$value] = $value;
+                    }
+                }
             }
             $anchors['Page content'] = $newAnchors;
         }
