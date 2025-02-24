@@ -67,14 +67,18 @@ class SiteTreeLink extends SuperLinkTypeExtension
         );
         $newAnchors = [];
         if (!empty($contentAnchors)) {
-            foreach ($contentAnchors as $key => $anchors) {
-                if(is_array($anchors)) {
-                    foreach ($anchors as $value) {
+            foreach ($contentAnchors as $innerAnchors) {
+                if (is_array($innerAnchors)) {
+                    foreach ($innerAnchors as $value) {
                         $newAnchors[$value] = $value;
                     }
+                } else {
+                    $newAnchors[$innerAnchors] = $innerAnchors;
                 }
             }
-            $anchors['Page content'] = $newAnchors;
+            if (!empty($newAnchors)) {
+                $anchors['Page content'] = $newAnchors;
+            }
         }
 
         $globalAnchors = GlobalAnchors::get_anchors();
