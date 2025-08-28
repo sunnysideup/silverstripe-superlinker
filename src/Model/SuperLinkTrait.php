@@ -282,6 +282,11 @@ trait SuperLinkTrait
         return $url;
     }
 
+    public function getLink(): ?string
+    {
+        return $this->getURL();
+    }
+
     public function getAbsoluteURL(): ?string
     {
         $url = $this->getURL();
