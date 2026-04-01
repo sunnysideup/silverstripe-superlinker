@@ -21,7 +21,7 @@
   "require": {
     "silverstripe/cms": "~5.0",
     "fromholdio/silverstripe-dependentgroupeddropdownfield": "^3.0.0",
-    "sunnysideup/silverstripe-externalurlfield": "dev-master",
+    "sunnysideup/silverstripe-externalurlfield": "5.x-dev",
     "innoweb/silverstripe-international-phone-number-field": "^5.0.0",
     "fromholdio/silverstripe-systemlinks": "^1.4"
   },
