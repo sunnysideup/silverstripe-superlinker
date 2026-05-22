@@ -12,7 +12,7 @@ use SilverStripe\Forms\DropdownField;
  * Class \Fromholdio\SuperLinker\Extensions\GlobalAnchorLink
  *
  * @property SuperLink|VersionedSuperLink|GlobalAnchorLink $owner
- * @property string $GlobalAnchorKey
+ * @property ?string $GlobalAnchorKey
  */
 class GlobalAnchorLink extends SuperLinkTypeExtension
 {

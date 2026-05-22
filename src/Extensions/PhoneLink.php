@@ -10,7 +10,7 @@ use SilverStripe\Forms\FieldList;
  * Class \Fromholdio\SuperLinker\Extensions\PhoneLink
  *
  * @property SuperLink|VersionedSuperLink|PhoneLink $owner
- * @property string $PhoneNumber
+ * @property ?string $PhoneNumber
  */
 class PhoneLink extends SuperLinkTypeExtension
 {

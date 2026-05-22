@@ -18,7 +18,7 @@ use SilverStripe\ORM\DataExtension;
  * Just apply this extension to your SuperLink class/subclass.
  *
  * @property SuperLinkDescriptionExtension $owner
- * @property string $LinkDescription
+ * @property ?string $LinkDescription
  */
 class SuperLinkDescriptionExtension extends DataExtension
 {

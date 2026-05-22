@@ -7,19 +7,19 @@ use SilverStripe\ORM\DataObject;
 /**
  * Class \Fromholdio\SuperLinker\Model\SuperLink
  *
- * @property string $SystemLinkKey
- * @property string $SiteTreeAnchor
- * @property string $PhoneNumber
- * @property string $GlobalAnchorKey
+ * @property ?string $SystemLinkKey
+ * @property ?string $SiteTreeAnchor
+ * @property ?string $PhoneNumber
+ * @property ?string $GlobalAnchorKey
  * @property bool $DoForceDownload
- * @property string $ExternalURL
- * @property string $Email
- * @property string $EmailCC
- * @property string $EmailBCC
- * @property string $EmailSubject
- * @property string $EmailBody
- * @property string $LinkText
- * @property string $LinkType
+ * @property ?string $ExternalURL
+ * @property ?string $Email
+ * @property ?string $EmailCC
+ * @property ?string $EmailBCC
+ * @property ?string $EmailSubject
+ * @property ?string $EmailBody
+ * @property ?string $LinkText
+ * @property ?string $LinkType
  * @property bool $DoOpenInNew
  * @property bool $DoNoFollow
  * @property int $SiteTreeID
@@ -34,6 +34,13 @@ use SilverStripe\ORM\DataObject;
  * @mixin PhoneLink
  * @mixin SiteTreeLink
  * @mixin SystemLink
+ * @mixin FileLinkTracking
+ * @mixin AssetControlExtension
+ * @mixin SiteTreeLinkTracking
+ * @mixin VersionedStateExtension
+ * @mixin RecursivePublishable
+ * @mixin DataObjectExtension
+ * @mixin FixBooleanSearchAsExtension
  */
 class SuperLink extends DataObject
 {

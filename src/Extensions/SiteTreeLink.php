@@ -12,7 +12,7 @@ use SilverStripe\Forms\TreeDropdownField;
  * Class \Fromholdio\SuperLinker\Extensions\SiteTreeLink
  *
  * @property SuperLink|VersionedSuperLink|SiteTreeLink $owner
- * @property string $SiteTreeAnchor
+ * @property ?string $SiteTreeAnchor
  * @property int $SiteTreeID
  * @method SiteTree SiteTree()
  */

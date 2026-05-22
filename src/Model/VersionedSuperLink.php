@@ -8,20 +8,20 @@ use SilverStripe\Versioned\Versioned;
 /**
  * Class \Fromholdio\SuperLinker\Model\VersionedSuperLink
  *
- * @property string $SystemLinkKey
- * @property string $SiteTreeAnchor
- * @property string $PhoneNumber
- * @property string $GlobalAnchorKey
+ * @property ?string $SystemLinkKey
+ * @property ?string $SiteTreeAnchor
+ * @property ?string $PhoneNumber
+ * @property ?string $GlobalAnchorKey
  * @property bool $DoForceDownload
- * @property string $ExternalURL
- * @property string $Email
- * @property string $EmailCC
- * @property string $EmailBCC
- * @property string $EmailSubject
- * @property string $EmailBody
+ * @property ?string $ExternalURL
+ * @property ?string $Email
+ * @property ?string $EmailCC
+ * @property ?string $EmailBCC
+ * @property ?string $EmailSubject
+ * @property ?string $EmailBody
  * @property int $Version
- * @property string $LinkText
- * @property string $LinkType
+ * @property ?string $LinkText
+ * @property ?string $LinkType
  * @property bool $DoOpenInNew
  * @property bool $DoNoFollow
  * @property int $SiteTreeID
@@ -37,6 +37,13 @@ use SilverStripe\Versioned\Versioned;
  * @mixin PhoneLink
  * @mixin SiteTreeLink
  * @mixin SystemLink
+ * @mixin FileLinkTracking
+ * @mixin AssetControlExtension
+ * @mixin SiteTreeLinkTracking
+ * @mixin VersionedStateExtension
+ * @mixin RecursivePublishable
+ * @mixin DataObjectExtension
+ * @mixin FixBooleanSearchAsExtension
  */
 class VersionedSuperLink extends DataObject
 {

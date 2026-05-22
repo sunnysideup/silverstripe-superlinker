@@ -9,7 +9,7 @@ use SilverStripe\Forms\FieldList;
  * Class \Fromholdio\SuperLinker\Extensions\ExternalLink
  *
  * @property SuperLink|VersionedSuperLink|ExternalLink $owner
- * @property string $ExternalURL
+ * @property ?string $ExternalURL
  */
 class ExternalLink extends SuperLinkTypeExtension
 {

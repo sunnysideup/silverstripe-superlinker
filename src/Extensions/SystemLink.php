@@ -11,7 +11,7 @@ use SilverStripe\View\ArrayData;
  * Class \Fromholdio\SuperLinker\Extensions\SystemLink
  *
  * @property SuperLink|VersionedSuperLink|SystemLink $owner
- * @property string $SystemLinkKey
+ * @property ?string $SystemLinkKey
  */
 class SystemLink extends SuperLinkTypeExtension
 {
