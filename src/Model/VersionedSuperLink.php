@@ -28,22 +28,22 @@ use SilverStripe\Versioned\Versioned;
  * @property int $FileID
  * @method SiteTree SiteTree()
  * @method File File()
- * @mixin Versioned
+ * @mixin AssetControlExtension
+ * @mixin DataObjectExtension
  * @mixin EmailLink
  * @mixin ExternalLink
  * @mixin FileLink
+ * @mixin FileLinkTracking
+ * @mixin FixBooleanSearchAsExtension
  * @mixin GlobalAnchorLink
  * @mixin NullLink
  * @mixin PhoneLink
- * @mixin SiteTreeLink
- * @mixin SystemLink
- * @mixin FileLinkTracking
- * @mixin AssetControlExtension
- * @mixin SiteTreeLinkTracking
- * @mixin VersionedStateExtension
  * @mixin RecursivePublishable
- * @mixin DataObjectExtension
- * @mixin FixBooleanSearchAsExtension
+ * @mixin SiteTreeLink
+ * @mixin SiteTreeLinkTracking
+ * @mixin SystemLink
+ * @mixin Versioned
+ * @mixin VersionedStateExtension
  */
 class VersionedSuperLink extends DataObject
 {
