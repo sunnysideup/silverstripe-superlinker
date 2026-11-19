@@ -6,8 +6,8 @@ use Fromholdio\SuperLinker\Model\SuperLink;
 use Fromholdio\SuperLinker\Model\VersionedSuperLink;
 use SilverStripe\AssetAdmin\Forms\UploadField;
 use SilverStripe\Assets\Image;
-use SilverStripe\Forms\FieldList;
-use SilverStripe\ORM\DataExtension;
+use SilverStripe\Core\Extension;
+use SilverStripe\Forms\FieldList;;
 
 /**
  * Apply to your SuperLink classes to enable image upload for your link.
@@ -23,7 +23,7 @@ use SilverStripe\ORM\DataExtension;
  * @property int $LinkImageID
  * @method Image LinkImage()
  */
-class SuperLinkImageExtension extends DataExtension
+class SuperLinkImageExtension extends Extension
 {
     private static $link_image_upload_path = null;
 

@@ -6,6 +6,7 @@ use Fromholdio\DependentGroupedDropdownField\Forms\DependentGroupedDropdownField
 use Fromholdio\GlobalAnchors\GlobalAnchors;
 use SilverStripe\CMS\Model\SiteTree;
 use SilverStripe\Forms\FieldList;
+use SilverStripe\Forms\SearchableDropdownField;
 use SilverStripe\Forms\TreeDropdownField;
 
 /**
@@ -26,7 +27,8 @@ class SiteTreeLink extends SuperLinkTypeExtension
             'allow_anchor' => true,
             'settings' => [
                 'no_follow' => false
-            ]
+            ],
+            'use_searchable_dropdown_field' => true,
         ]
     ];
 
@@ -124,12 +126,6 @@ class SiteTreeLink extends SuperLinkTypeExtension
         if (!empty($anchor)) $url .= '#' . $anchor;
     }
 
-    public function updateAbsoluteURL(?string &$url): void
-    {
-        if (!$this->isLinkTypeMatch()) return;
-        $url = $this->getOwner()->getLinkedSiteTree()?->AbsoluteLink();
-    }
-
     public function getAllowedLinkedSiteTreeRoot(): ?SiteTree
     {
         $siteTree = null;
@@ -141,19 +137,29 @@ class SiteTreeLink extends SuperLinkTypeExtension
     {
         if (!$this->isLinkTypeMatch($type)) return;
 
-        $siteTreeField = TreeDropdownField::create(
-            $fieldPrefix . 'SiteTreeID',
-            _t(__CLASS__ . '.PageOnThisWebsite', 'Page on this website'),
-            SiteTree::class
-        );
+        if ($this->getOwner()->getTypeConfigValue('use_searchable_dropdown_field', $type)) {
+            $siteTreeField = SearchableDropdownField::create(
+                $fieldPrefix . 'SiteTreeID',
+                _t(__CLASS__ . '.PageOnThisWebsite', 'Page on this website'),
+                SiteTree::get()
+            );
+        } else {
+            $siteTreeField = TreeDropdownField::create(
+                $fieldPrefix . 'SiteTreeID',
+                _t(__CLASS__ . '.PageOnThisWebsite', 'Page on this website'),
+                SiteTree::class
+            );
+            $siteTreeRoot = $this->getOwner()->getAllowedLinkedSiteTreeRoot();
+            if (!is_null($siteTreeRoot)) {
+                $siteTreeField->setTreeBaseID($siteTreeRoot->getField('ID'));
+            }
+        }
+
         $siteTreeField->setEmptyString('-- ' . _t(__CLASS__ . '.SelectAPage', 'Select a page') . ' --');
         $siteTreeField->setHasEmptyDefault(true);
-        $fields->push($siteTreeField);
 
-        $siteTreeRoot = $this->getOwner()->getAllowedLinkedSiteTreeRoot();
-        if (!is_null($siteTreeRoot)) {
-            $siteTreeField->setTreeBaseID($siteTreeRoot->getField('ID'));
-        }
+        $this->getOwner()->invokeWithExtensions('updateSiteTreeField', $siteTreeField);
+        $fields->push($siteTreeField);
 
         if (!$this->getOwner()->getTypeConfigValue('allow_anchor', $type)) {
             return;
@@ -172,6 +178,8 @@ class SiteTreeLink extends SuperLinkTypeExtension
         $anchorField
             ->setDepends($siteTreeField)
             ->setEmptyString('-- ' . _t(__CLASS__ . '.SelectAnAnchor', 'Select an anchor') . ' --');
+
+        $this->getOwner()->invokeWithExtensions('updateAnchorField', $anchorField);
         $fields->push($anchorField);
     }
 }
